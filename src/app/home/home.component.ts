@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   profileForm: FormGroup
   currentUser: any = null
   isUpdate:boolean=false;
+  submitted = false;
   constructor(private authService: AuthService,
     private router: Router,
     private homeService: HomeService,
