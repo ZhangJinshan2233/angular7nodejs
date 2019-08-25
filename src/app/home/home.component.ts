@@ -22,8 +22,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.createSignupForm();
     this.homeService.getProfile().subscribe(res => {
-      this.currentUser = res['user']
-      console.log(this.currentUser)
+      this.currentUser =JSON.parse(res['user']) 
       this.profileForm.setValue({
         userName: this.currentUser.userName,
         firstName: this.currentUser.firstName,

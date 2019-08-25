@@ -21,7 +21,7 @@ export class AuthService {
         tap(tokens => this.doLoginUser(user.username, tokens)),
         mapTo(true),
         catchError(error => {
-          alert(error.err['message']);
+          alert(error.err);
           return of(false);
         }));
   }
@@ -34,7 +34,7 @@ export class AuthService {
       mapTo(true),
       catchError(error => {
         console.log(error)
-        alert(error.err['message']);
+        alert(error.err);
         return of(false);
       }));
   }
@@ -47,7 +47,7 @@ export class AuthService {
       mapTo(true),
       catchError(error => {
         console.log(error)
-        alert(error.err['message']);
+        alert(error.err);
         throw error;
       }));
   }
@@ -73,7 +73,6 @@ export class AuthService {
   }
 
   private doLogoutUser() {
-    console.log('123')
     this.loggedUser = null;
     this.removeTokens();
   }

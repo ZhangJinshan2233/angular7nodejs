@@ -13,7 +13,7 @@ let create_token = (user) => {
         userName: user.userName
     },
         config.jwtSecret, {
-            expiresIn: 20
+            expiresIn: 900
         })
 }
 

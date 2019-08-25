@@ -24,7 +24,6 @@ export class HomeService {
     .pipe(
       mapTo(true),
         catchError(error => {
-          console.log(error)
           alert(error.err);
           return of(false);
         }));
