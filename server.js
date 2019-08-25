@@ -10,7 +10,7 @@ const morgan = require('morgan');
 
 const passport = require('passport');
 
-const routes = require('./api/routes')
+const routes = require('./api/routes/userRoute')
 
 const middlewares = require('./api/middlewares')
 
