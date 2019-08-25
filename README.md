@@ -8,3 +8,7 @@ https://angularnodejsfullstack.herokuapp.com
 
 userName:test@gmail.com
 password:123456
+## Project structure
+
+frontend /src
+backend  server.js /api
