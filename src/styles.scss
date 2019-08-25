@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.invalid-feedback {
+  color: red;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1em;
+}
+
+.is-invalid {
+  color: red
+}
+
+.btn {
+  border-radius: 2rem
+}

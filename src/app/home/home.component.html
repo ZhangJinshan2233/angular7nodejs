@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-9 col-lg-7">
+      <div class="card mt-2">
+        <div class="card-body">
+          <h3 class="card-title text-center">Profile</h3>
+          <div class='row'>
+            
+            <img src={{currentUser?.imageData}} class="rounded mx-auto d-block" alt="...">
+          </div>
+          <div class="row my-3">
+            <div class="col-6">
+              <button type="button" class="btn btn-block bg-primary"(click)="toggleToUpdate()">Edit</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-block bg-primary" (click)="logout()">Logout</button>
+            </div>
+          </div>
+          <div class='row mt-4'>
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class='form-profile'>
+              <div class="form-group">
+                <input type="text" formControlName="firstName" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" placeholder="First name*" autofocus />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                  <div *ngIf="f.firstName.errors.required">First name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="lastName" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" placeholder="Last name*" autofocus/>
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                  <div *ngIf="f.lastName.errors.required">First name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="email" formControlName="userName" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" placeholder="Email address*" autofocus/>
+                <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                  <div *ngIf="f.userName.errors.required">User name is required</div>
+                  <div *ngIf="f.userName.errors.email">Enter a valid email</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="phoneNumber" class="form-control"
+                  [ngClass]="{'is-invalid': submitted&&f.phoneNumber.errors}" placeholder="phone number*" autofocus />
+                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                  <div *ngIf="f.phoneNumber.errors.required">phone number is required</div>
+                  <div *ngIf="f.phoneNumber.errors.pattern">phone number 8 numbers</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="address1" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.address1.errors }" placeholder="Address 1*" autofocus/>
+                <div *ngIf="submitted && f.address1.errors" class="invalid-feedback">
+                  <div *ngIf="f.address1.errors.required">Address is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="address2" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.address2.errors }" placeholder="Address 2" autofocus/>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="country" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.country.errors }" placeholder="Country name*" autofocus />
+                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                  <div *ngIf="f.country.errors.required">Country name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="city" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }" placeholder="City name*" autofocus />
+                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                  <div *ngIf="f.city.errors.required">city name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="postcode" class="form-control"
+                  [ngClass]="{'is-invalid': submitted&&f.postcode.errors}" placeholder="postcode*" autofocus />
+                <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
+                  <div *ngIf="f.postcode.errors.required">Postcode is required</div>
+                  <div *ngIf="f.postcode.errors.pattern">Postcode is 6 numbers</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="dateOfBirth" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" placeholder="date of birth*"
+                  [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }" bsDatepicker />
+                <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
+                  <div *ngIf="f.dateOfBirth.errors.required">date of birth is required</div>
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                    <input formControlName="imageFile" type="file" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.imageFile.errors }" placeholder="select a image*" (change)="onFileChanged($event)" />
+                    <div *ngIf="submitted && f.imageFile.errors" class="invalid-feedback">
+                      <div *ngIf="f.imageFile.errors.required">Select a image</div>
+                    </div>
+                  </div> -->
+              <div class="form-group">
+                <button *ngIf='isUpdate' class="btn btn-lg btn-primary btn-block text-uppercase"
+                  type="submit">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

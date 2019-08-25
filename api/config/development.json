@@ -1,0 +1,6 @@
+{
+    "jwtSecret": "backend-develpment-code",
+  
+    "dbUrl": "mongodb://interview:interview2@ds311538.mlab.com:11538/angular-nodejs"
+}
+
