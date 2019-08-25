@@ -39,7 +39,10 @@ app.use(passport.session());
 app.use(morgan('dev'));
 // refer to routes
 app.use('/api', routes)
-
+// Send all requests to index.html
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/angularnodejs/index.html'));
+  });
 // error handler for not existed api
 app.use(function (req, res, next) {
     const err = new Error('not Found Api');
