@@ -10,5 +10,5 @@ userName:test@gmail.com
 password:123456
 ## Project structure
 
-frontend /src ;
-backend  server.js /api
+front-end code /src ;
+back-end code server.js /api
