@@ -103,7 +103,7 @@ module.exports = {
 
         if (is_password_match) {
 
-            let refreshToken = randToken.uid(16);
+            let refreshToken = randToken.uid(256);
 
             refreshTokens[refreshToken] = userName;
 
