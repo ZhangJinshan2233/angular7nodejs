@@ -23,11 +23,11 @@ app.use(cors());
 app.use(express.static(__dirname + '/dist/angularnodejs'));
 
 app.use(bodyParser.json({
-    limit: '10mb'
+    limit: '20mb'
 }));
 
 app.use(bodyParser.urlencoded({
-    limit: "10mb",
+    limit: "20mb",
     extended: true,
     parameterLimit: 100000
 }));
@@ -38,10 +38,10 @@ app.use(passport.session());
 
 app.use(morgan('dev'));
 
-// Send all requests to index.html
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/angularnodejs/index.html'));
-});
+// // Send all requests to index.html
+// app.get('*', function(req, res) {
+//   res.sendFile(path.join(__dirname + '/dist/angularnodejs/index.html'));
+// });
 // refer to routes
 app.use('/api', routes)
 
